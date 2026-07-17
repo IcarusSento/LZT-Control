@@ -111,7 +111,7 @@ LZT Control рассчитан на продавцов и реселлеров, 
 
 <table>
   <tr>
-    <td width="54%" align="center">
+    <td width="46%" align="center">
       <img src="docs/images/tutorial-menu.png" alt="Выбор раздела инструкции" width="100%"><br>
       <sub>Выбор нужного раздела</sub>
     </td>
@@ -125,8 +125,9 @@ LZT Control рассчитан на продавцов и реселлеров, 
 Настройки проверки разбираются внутри открытого окна: инструкция сама переключает вкладки и показывает поля, относящиеся к текущему шагу.
 
 <p align="center">
-  <img src="docs/images/tutorial-settings.png" alt="Инструкция по настройкам проверки" width="80%">
+  <img src="docs/images/tutorial-settings.png" alt="Инструкция по настройкам проверки" width="100%">
 </p>
+
 
 ## Установка и запуск
 
