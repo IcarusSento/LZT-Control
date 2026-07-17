@@ -1032,13 +1032,18 @@ def _profile_row(pid: int) -> sqlite3.Row:
     return row
 
 def _profile_dict(row: sqlite3.Row) -> Dict[str, Any]:
+    # A task may use only a proxy that still exists in the shared proxy
+    # directory.  Old builds could leave an inline proxy_url behind while the
+    # visible proxy_id was empty, which made the UI show "no proxy" but the
+    # runner still connect through that stale address.
+    proxy_id = row["proxy_id"]
     return {
         "id":               int(row["id"]),
         "name":             row["name"],
         "token_id":         row["token_id"],
         "api_token":        _unprotect_db(row["api_token"]),
-        "proxy_id":         row["proxy_id"],
-        "proxy_url":        _unprotect_db(row["proxy_url"]),
+        "proxy_id":         proxy_id,
+        "proxy_url":        _unprotect_db(row["proxy_url"]) if proxy_id is not None else "",
         "proxy_missing":    bool(row["proxy_missing"]),
         "enabled":          bool(row["enabled"]),
         "interval_locked":  bool(row["interval_locked"]),
@@ -2610,9 +2615,13 @@ def api_list_profiles():
 
 @app.post("/api/profiles")
 def api_create_profile(payload: ProfileCreate):
+    provided = getattr(payload, "model_fields_set", None)
+    if provided is None:
+        provided = getattr(payload, "__fields_set__", set())
     selected_proxy_id = payload.proxy_id
     selected_proxy_raw = payload.proxy_url.strip()
-    if selected_proxy_id is None and not selected_proxy_raw and payload.token_id:
+    proxy_choice_was_omitted = "proxy_id" not in provided and "proxy_url" not in provided
+    if proxy_choice_was_omitted and selected_proxy_id is None and not selected_proxy_raw and payload.token_id:
         token = get_token(payload.token_id)
         if token:
             selected_proxy_id = token.get("proxy_id")
