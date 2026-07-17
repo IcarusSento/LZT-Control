@@ -109,28 +109,28 @@ LZT Control рассчитан на продавцов и реселлеров, 
 
 Встроенная инструкция разбита по страницам и утилитам. Она затемняет фон, выделяет нужный элемент и коротко объясняет его назначение. Инструкция запускается вручную и не меняет настройки.
 
-<table width="100%">
+<table>
+
   <tr>
-    <td width="50%" align="center" valign="top">
-      <img
-        src="docs/images/tutorial-menu.png"
-        alt="Выбор раздела инструкции"
-        width="95%"
-      >
-      <br>
+
+    <td width="54%" align="center">
+
+      <img src="docs/images/tutorial-menu.png" alt="Выбор раздела инструкции" width="100%"><br>
+
       <sub>Выбор нужного раздела</sub>
+
     </td>
 
-    <td width="50%" align="center" valign="top">
-      <img
-        src="docs/images/tutorial-bump.png"
-        alt="Подсветка элемента на странице"
-        width="95%"
-      >
-      <br>
+    <td width="54%" align="center">
+
+      <img src="docs/images/tutorial-bump.png" alt="Инструкция по умному лимиту" width="100%"><br>
+
       <sub>Подсветка элемента на странице</sub>
+
     </td>
+
   </tr>
+
 </table>
 
 Настройки проверки разбираются внутри открытого окна: инструкция сама переключает вкладки и показывает поля, относящиеся к текущему шагу.
