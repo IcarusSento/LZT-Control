@@ -111,12 +111,23 @@ LZT Control рассчитан на продавцов и реселлеров, 
 
 <table>
   <tr>
-    <td width="46%" align="center">
-      <img src="docs/images/tutorial-menu.png" alt="Выбор раздела инструкции" width="100%"><br>
+    <td width="50%" align="center" valign="top">
+      <img
+        src="docs/images/tutorial-menu.png"
+        alt="Выбор раздела инструкции"
+        width="100%"
+      >
+      <br>
       <sub>Выбор нужного раздела</sub>
     </td>
-    <td width="54%" align="center">
-      <img src="docs/images/tutorial-bump.png" alt="Инструкция по умному лимиту" width="100%"><br>
+
+    <td width="50%" align="center" valign="top">
+      <img
+        src="docs/images/tutorial-bump.png"
+        alt="Инструкция по умному лимиту"
+        width="100%"
+      >
+      <br>
       <sub>Подсветка элемента на странице</sub>
     </td>
   </tr>
