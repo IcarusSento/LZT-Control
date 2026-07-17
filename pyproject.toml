@@ -1,0 +1,16 @@
+[project]
+name = "lzt-control"
+version = "1.0.0"
+description = "Integrated LZT bump and account-check control panel"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.115.0",
+  "uvicorn[standard]==0.30.6",
+  "requests==2.32.3",
+  "python-dotenv==1.0.1",
+  "aiofiles==24.1.0",
+  "json5==0.9.25",
+  "rich==13.7.1",
+]
